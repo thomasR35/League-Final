@@ -1,0 +1,46 @@
+{% extends "layout.twig" %}
+
+{% block title %}Accueil - The League{% endblock %}
+
+{% block content %}
+    <section class="top-home">
+        <h1>Tout sur la league</h1>
+        <p>Les players, les teams et l'actu des matchs</p>
+    </section>
+    
+    <!-- Section des équipes -->
+    <section class="team-section">
+        <h2>{{ section_titles.teams }}</h2>
+        <div class="section-box">
+            <div class="team-cards">
+                {% for team in teams %}
+                    {% include 'components/team-card.twig' with { team: team } %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Section des joueurs -->
+    <section class="players-section">
+    <h2>{{ section_titles.players }}</h2> 
+    <div class="player-cards">
+        {% for player in players %}
+            {% include 'components/player-card.twig' with { player: player } %}
+        {% endfor %}
+    </div>
+</section>
+
+
+    <!-- Section des matchs -->
+    <section class="match-section">
+        <h2>{{ section_titles.matches }}</h2>
+        <div class="section-box">  
+            <div class="match-cards">
+                {% for match in matches %}
+                    {% include 'components/match-card.twig' with { match: match } %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

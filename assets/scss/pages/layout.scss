@@ -1,0 +1,55 @@
+@import "../variables.scss"; // Import des variables
+
+// 📌 Style général
+body {
+  font-family: $font-primary;
+  background-color: $darkerGrey;
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+// 📌 Header
+header {
+  background-color: $darkerGrey;
+  padding: 10px;
+  color: $white;
+  text-align: center;
+}
+
+// 📌 Navigation
+nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  margin-top: 10px;
+
+  a {
+    color: $white;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:nth-child(1) {
+      grid-column: 2;
+    }
+    &:nth-child(2) {
+      grid-column: 3;
+    }
+    &:nth-child(3) {
+      grid-column: 4;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// 📌 Titres
+h1 {
+  text-align: center;
+  color: $white;
+  font-weight: 700;
+}

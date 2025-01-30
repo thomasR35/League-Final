@@ -1,0 +1,18 @@
+.player-card {
+  border: 1px solid $darkGrey;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  img {
+    max-width: 200px;
+    max-height: 100%;
+  }
+  .player-name {
+    text-transform: capitalize;
+    color: $pink;
+  }
+  .player-team {
+    color: $yellow;
+  }
+}
