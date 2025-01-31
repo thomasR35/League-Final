@@ -11,7 +11,7 @@
     <!-- Section des équipes -->
 <section class="featured-team">
     <h2>{{ section_titles.featured_team }}</h2>
-    <div class="section-box">
+    <div class="section-box-team">
         <div class="team-content">
             <!-- Image de l'équipe -->
             <div class="team-logo">
@@ -55,7 +55,7 @@
     <!-- Section des matchs -->
     <section class="match-section">
     <h2>{{ section_titles.matches }}</h2>
-    <div class="section-box">  
+    <div class="section-box-match">  
         {% if matches is not empty %}
             {% set last_match = matches|first %} 
             <div class="match-card">

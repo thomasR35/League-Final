@@ -45,11 +45,19 @@ h2 {
     top: 2rem;
   }
 }
-.section-box {
+.section-box-team {
   padding: 20px;
   border: 1px solid $darkGrey;
-  margin: 20px;
-  color: $pink;
+  margin: 20px auto;
+  max-width: 1200px;
+  height: auto;
+}
+.section-box-match {
+  padding: 20px;
+  border: 1px solid $darkGrey;
+  margin: 20px auto;
+  max-width: 900px;
+  height: auto;
 }
 .players-section {
   display: flex;
