@@ -46,7 +46,7 @@ h2 {
   }
 }
 .section-box {
-  padding: 40px;
+  padding: 20px;
   border: 1px solid $darkGrey;
   margin: 20px;
   color: $pink;
@@ -86,5 +86,218 @@ h2 {
         color: $yellow;
       }
     }
+  }
+}
+.featured-team {
+  padding: 20px;
+  margin: 40px auto;
+
+  h2 {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 24px;
+    color: $yellow;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .team-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .team-logo {
+    display: flex;
+    justify-content: flex-start;
+
+    img {
+      width: 250px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  .team-players {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .team-players-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding-top: 0;
+
+    h4 {
+      font-family: "Ubuntu", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: $yellow;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      margin-left: 0;
+    }
+
+    p {
+      font-size: 12px;
+      font-weight: bold;
+      color: $white;
+      opacity: 0.8;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .players-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+  }
+
+  .player-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    p {
+      color: $pink;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 1rem;
+      margin-right: 1rem;
+      align-self: flex-end;
+    }
+  }
+
+  .player-image {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .player-name {
+    font-size: 14px;
+    color: $white;
+    margin-top: 5px;
+  }
+}
+.match-section {
+  padding: 20px;
+  margin: 40px auto;
+  text-align: center;
+
+  h2 {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 24px;
+    color: $yellow;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .match-card {
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .match-header {
+    margin-bottom: 15px;
+
+    h3 {
+      font-size: 22px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: $white;
+      margin-bottom: 5px;
+    }
+
+    .match-date {
+      font-size: 16px;
+      color: $grey;
+    }
+  }
+
+  .match-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .team-logo {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); // Ombre de base appliquée sur l'image elle-même
+    }
+  }
+
+  // Cadre qui sort (ombre externe)
+  .team-logo.out img {
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.7); // Ombre plus forte pour donner du relief
+  }
+
+  // Cadre qui rentre (ombre interne)
+  .team-logo.in img {
+    box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.7); // Ombre interne pour un effet enfoncé
+  }
+
+  .vs-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: $yellow;
+  }
+}
+
+// Responsive pour mobile
+@media (max-width: 768px) {
+  .match-card {
+    max-width: 100%;
+  }
+
+  .match-logos {
+    gap: 10px;
+  }
+
+  .team-logo {
+    width: 90px;
+    height: 90px;
+
+    img {
+      max-width: 80px;
+    }
+  }
+
+  .vs-text {
+    font-size: 16px;
+  }
+}
+
+// Responsive pour mobile
+@media (max-width: 768px) {
+  .team-content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .players-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player-image {
+    width: 80px;
   }
 }

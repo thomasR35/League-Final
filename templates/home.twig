@@ -9,16 +9,37 @@
     </section>
     
     <!-- Section des équipes -->
-    <section class="team-section">
-        <h2>{{ section_titles.teams }}</h2>
-        <div class="section-box">
-            <div class="team-cards">
-                {% for team in teams %}
-                    {% include 'components/team-card.twig' with { team: team } %}
-                {% endfor %}
+<section class="featured-team">
+    <h2>{{ section_titles.featured_team }}</h2>
+    <div class="section-box">
+        <div class="team-content">
+            <!-- Image de l'équipe -->
+            <div class="team-logo">
+                <img src="{{ featured_team.image_url }}" alt="Logo de {{ featured_team.name }}">
+            </div>
+
+            <!-- Conteneur des joueurs -->
+            <div class="team-players">
+                <div class="team-players-header">
+                    <h4>{{ featured_team.name }}</h4>
+                    <p>Les players</p>
+                </div>
+
+                <!-- Liste des joueurs -->
+                <div class="players-list">
+                    {% for player in featured_team_players %}
+                        <div class="player-wrapper">
+                            <img src="{{ player.image_url }}" alt="Portrait de {{ player.nickname }}" class="player-image">
+                            <p class="player-name">{{ player.nickname }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
 
     <!-- Section des joueurs -->
     <section class="players-section">
@@ -33,14 +54,32 @@
 
     <!-- Section des matchs -->
     <section class="match-section">
-        <h2>{{ section_titles.matches }}</h2>
-        <div class="section-box">  
-            <div class="match-cards">
-                {% for match in matches %}
-                    {% include 'components/match-card.twig' with { match: match } %}
-                {% endfor %}
+    <h2>{{ section_titles.matches }}</h2>
+    <div class="section-box">  
+        {% if matches is not empty %}
+            {% set last_match = matches|first %} 
+            <div class="match-card">
+                <div class="match-header">
+                    <h3>{{ last_match.team1.name | upper }} VS {{ last_match.team2.name | upper }}</h3>
+                    <p class="match-date">{{ last_match.date|date("d M Y") }}</p>
+                </div>
+                <div class="match-logos">
+                    <div class="team-logo out">
+                        <img src="{{ last_match.getTeam1().getLogo().getUrl() }}" alt="{{ last_match.getTeam1().getLogo().getAlt() }}">
+
+                    </div>
+                    <div class="vs-text">VS</div>
+                    <div class="team-logo in">
+                        <img src="{{ last_match.getTeam2().getLogo().getUrl() }}" alt="{{ last_match.getTeam2().getLogo().getAlt() }}">
+
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        {% else %}
+            <p>Aucun match disponible.</p>
+        {% endif %}
+    </div>
+</section>
+
 
 {% endblock %}

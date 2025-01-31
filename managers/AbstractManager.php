@@ -11,7 +11,6 @@ abstract class AbstractManager
 
     public function __construct()
     {
-        // ✅ Utilisation correcte de Database::getInstance()
         $this->db = Database::getInstance();
     }
 }

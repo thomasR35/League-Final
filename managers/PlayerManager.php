@@ -49,4 +49,21 @@ class PlayerManager extends AbstractManager
 
         return $players;
     }
+    public function getPlayersByTeam(int $teamId, int $limit = 3): array
+    {
+        // Construction de la requête sans paramètre LIMIT
+        $stmt = $this->db->prepare("
+        SELECT p.id, p.nickname, m.url AS image_url
+        FROM players p
+        LEFT JOIN media m ON p.portrait = m.id
+        WHERE p.team = :team_id
+        ORDER BY RAND()
+        LIMIT $limit
+    ");
+
+        $stmt->bindValue(':team_id', $teamId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
