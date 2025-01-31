@@ -1,0 +1,77 @@
+@import "../variables.scss";
+
+.match-details-section {
+  text-align: center;
+  padding: 20px;
+
+  .match-title {
+    color: $blue;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .match-date {
+    font-size: 1.2rem;
+    color: $grey;
+    margin-bottom: 20px;
+  }
+
+  .team-logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+  }
+
+  .team-logo {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+  }
+
+  .performance-title {
+    color: $purple;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid $darkGrey;
+
+    th,
+    td {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid $darkGrey;
+    }
+
+    th {
+      padding-bottom: 1rem;
+      color: $white;
+      text-transform: uppercase;
+    }
+
+    td {
+      color: $white;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    td:first-child {
+      color: $pink;
+      font-weight: bold;
+    }
+
+    td:nth-child(2) {
+      color: $yellow;
+      font-weight: bold;
+    }
+  }
+}

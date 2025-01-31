@@ -28,4 +28,14 @@ class MatchController extends BaseController
             'matches' => $matches
         ]);
     }
+    public function show($matchId)
+    {
+        $match = $this->gameManager->getGameById($matchId);
+        $performances = $this->gameManager->getMatchPerformances($matchId);
+
+        echo $this->twig->render('match-details.twig', [
+            'match' => $match,
+            'performances' => $performances
+        ]);
+    }
 }

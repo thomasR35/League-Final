@@ -681,4 +681,69 @@ h1 {
   color: #0b132b;
 }
 
+.match-details-section {
+  text-align: center;
+  padding: 20px;
+}
+.match-details-section .match-title {
+  color: #45a0ec;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.match-details-section .match-date {
+  font-size: 1.2rem;
+  color: #83a1bb;
+  margin-bottom: 20px;
+}
+.match-details-section .team-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.match-details-section .team-logo {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+}
+.match-details-section .performance-title {
+  color: #9e87cb;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+.match-details-section table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 1px solid #1c2541;
+}
+.match-details-section table th,
+.match-details-section table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #1c2541;
+}
+.match-details-section table th {
+  padding-bottom: 1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.match-details-section table td {
+  color: #ffffff;
+}
+.match-details-section table tr:last-child td {
+  border-bottom: none;
+}
+.match-details-section table td:first-child {
+  color: #d97ab5;
+  font-weight: bold;
+}
+.match-details-section table td:nth-child(2) {
+  color: #d4b52f;
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=main.css.map */

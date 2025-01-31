@@ -131,4 +131,42 @@ class GameManager extends AbstractManager
 
         return $games;
     }
+    public function getGameById($matchId): ?array
+    {
+        $stmt = $this->db->prepare("
+            SELECT g.id, g.date, 
+                   t1.name AS team1_name, t1.logo AS team1_logo_id,
+                   t2.name AS team2_name, t2.logo AS team2_logo_id,
+                   m1.url AS team1_logo_url, m1.alt AS team1_logo_alt,
+                   m2.url AS team2_logo_url, m2.alt AS team2_logo_alt
+            FROM games g
+            INNER JOIN teams t1 ON g.team_1 = t1.id
+            INNER JOIN teams t2 ON g.team_2 = t2.id
+            INNER JOIN media m1 ON t1.logo = m1.id
+            INNER JOIN media m2 ON t2.logo = m2.id
+            WHERE g.id = :matchId
+        ");
+        $stmt->bindValue(':matchId', $matchId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function getMatchPerformances($matchId): array
+    {
+        $stmt = $this->db->prepare("
+        SELECT p.nickname AS player_name, 
+               t.name AS team_name, 
+               pp.points, 
+               pp.assists
+        FROM player_performance pp
+        INNER JOIN players p ON pp.player = p.id
+        INNER JOIN teams t ON p.team = t.id
+        WHERE pp.game = :matchId
+    ");
+        $stmt->bindValue(':matchId', $matchId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

@@ -57,6 +57,10 @@ class Router
                 $controller = new TeamController($this->teamManager, $this->playerManager);
                 $controller->show($_GET['id']);
                 break;
+            case 'match-details':
+                $controller = new MatchController($this->gameManager);
+                $controller->show($_GET['id']);
+                break;
         }
     }
 }

@@ -1,0 +1,38 @@
+{% extends "layout.twig" %}
+
+{% block title %}{{ match.team1_name }} VS {{ match.team2_name }} - The League{% endblock %}
+
+{% block content %}
+    <section class="match-details-section">
+        <h2 class="match-title">{{ match.team1_name }} VS {{ match.team2_name }}</h2>
+        <p class="match-date">{{ match.date|date("d M Y") }}</p>
+
+        <div class="team-logos">
+            <img src="{{ match.team1_logo_url }}" alt="{{ match.team1_logo_alt }}" class="team-logo">
+            <img src="{{ match.team2_logo_url }}" alt="{{ match.team2_logo_alt }}" class="team-logo">
+        </div>
+
+
+        <h3 class="performance-title">Les performances</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Team</th>
+                    <th>Points</th>
+                    <th>Assists</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for perf in performances %}
+                    <tr>
+                        <td>{{ perf.player_name }}</td>
+                        <td>{{ perf.team_name }}</td>
+                        <td>{{ perf.points }}</td>
+                        <td>{{ perf.assists }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}
