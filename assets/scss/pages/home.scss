@@ -200,7 +200,6 @@ h2 {
   }
 
   .match-card {
-    padding: 20px;
     margin: 20px auto;
     text-align: center;
   }
@@ -239,25 +238,19 @@ h2 {
     img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); // Ombre de base appliquée sur l'image elle-même
     }
   }
 
   // Cadre qui sort (ombre externe)
   .team-logo.out img {
-    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.7); // Ombre plus forte pour donner du relief
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7); // Ombre plus forte pour donner du relief
   }
 
   // Cadre qui rentre (ombre interne)
   .team-logo.in img {
-    box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.7); // Ombre interne pour un effet enfoncé
-  }
-
-  .vs-text {
-    font-size: 20px;
-    font-weight: bold;
-    color: $yellow;
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.7); // Ombre interne pour un effet enfoncé
   }
 }
 
