@@ -1,0 +1,14 @@
+.match-card {
+  border: 1px solid #1c2541;
+  margin: 1rem;
+}
+
+.match-header h3 {
+  color: #45a0ec;
+  margin: 1rem;
+}
+.match-header p {
+  margin: 1rem;
+}
+
+/*# sourceMappingURL=matches.css.map */

@@ -1,0 +1,29 @@
+{% extends "layout.twig" %}
+
+{% block title %}Tous les Matchs - The League{% endblock %}
+
+{% block content %}
+    <section class="match-section">
+        <h2>Les Matchs</h2>
+            {% if matches is not empty %}
+                {% for match in matches %}
+                    <div class="match-card">
+                        <div class="match-header">
+                            <h3>{{ match.getTeam1().getName() | upper }} VS {{ match.getTeam2().getName() | upper }}</h3>
+                            <p class="match-date">{{ match.getDate().format("d M Y") }}</p>
+                        </div>
+                        <div class="match-logos">
+                            <div class="team-logo">
+                                <img src="{{ match.getTeam1().getLogo().getUrl() }}" alt="{{ match.getTeam1().getLogo().getAlt() }}">
+                            </div>
+                            <div class="team-logo">
+                                <img src="{{ match.getTeam2().getLogo().getUrl() }}" alt="{{ match.getTeam2().getLogo().getAlt() }}">
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Aucun match disponible.</p>
+            {% endif %}
+    </section>
+{% endblock %}
