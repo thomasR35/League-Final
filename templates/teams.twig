@@ -1,0 +1,21 @@
+{% extends "layout.twig" %}
+
+{% block title %}Les Teams - The League{% endblock %}
+
+{% block content %}
+    <section class="teams-section">
+        <h2>{{ section_titles.teams }}</h2>
+        <div class="teams-container">
+            {% for team in teams %}
+                <div class="team-card">
+                    <img src="{{ team.logo_url }}" alt="{{ team.logo_alt }}" class="team-logo">
+                    <h3>{{ team.name }}</h3>
+                    <p>{{ team.description }}</p>
+                    <a href="index.php?page=team-details&id={{ team.id }}" class="discover-btn">
+                     Découvrez {{ team.name }}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

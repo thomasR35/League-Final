@@ -1,0 +1,27 @@
+{% extends "layout.twig" %}
+
+{% block title %}Les Players - The League{% endblock %}
+
+{% block content %}
+    <section class="players-section">
+        <h2>Les players de la ligue</h2>
+        <div class="players-container">
+            {% for player in players %}
+                <div class="players-card">
+                    <img src="{{ player.portrait_url }}" alt="{{ player.portrait_alt }}" class="player-portrait">
+                    <h3>{{ player.nickname }}</h3>
+                    {% if player.team_name %}
+                        <div class="players-team">
+                            <p>{{ player.team_name }}</p>
+                            <a href="index.php?page=player-details&id={{ player.id }}" class="player-card">
+                            <button>Découvrez {{ player.nickname}}</button>
+                            </a>
+                        </div>
+                    {% else %}
+                        <p class="no-team">Sans équipe</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

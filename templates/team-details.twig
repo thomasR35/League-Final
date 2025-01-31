@@ -1,0 +1,21 @@
+{% extends "layout.twig" %}
+
+{% block title %}{{ team.name }} - The League{% endblock %}
+
+{% block content %}
+    <section class="team-details-section">
+        <h2 class="team-title">{{ team.name }}</h2>
+
+        <div class="playerz-container">
+            {% for player in players %}
+                <div class="playerz-card">
+                    <img src="{{ player.portrait_url }}" alt="{{ player.portrait_alt }}" class="playerz-portrait">
+                    <p class="playerz-name">{{ player.nickname }}</p>
+                    <a href="index.php?page=player-details&id={{ player.id }}" class="playerz-btn">
+                        Découvrez {{ player.nickname }}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

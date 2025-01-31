@@ -1,0 +1,102 @@
+@import "../variables.scss";
+
+.player-details-section {
+  text-align: center;
+  padding: 20px;
+
+  h2 {
+    color: $pink;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .player-portrait {
+    width: 250px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 1px solid $darkGrey;
+
+    th,
+    td {
+      padding: 10px;
+      text-align: center;
+      color: $white;
+    }
+    td:first-child {
+      color: $yellow;
+      font-weight: bold;
+    }
+
+    td:last-child {
+      font-weight: bold;
+    }
+
+    td:last-child:contains("Oui") {
+      color: green;
+    }
+
+    td:last-child:contains("Non") {
+      color: red;
+    }
+
+    th {
+      color: $white;
+      text-transform: uppercase;
+    }
+  }
+
+  .performances-title {
+    color: $blue;
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+
+  .teammates-title {
+    color: $yellow;
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+
+  .teammates-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    .teammate-card {
+      text-align: center;
+
+      img {
+        width: 200px;
+      }
+
+      p {
+        color: $pink;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  .mate-btn {
+    background-color: transparent;
+    border: white 1px solid;
+    border-radius: 5px;
+    color: $white;
+    padding: 1rem;
+    text-transform: uppercase;
+    &:hover {
+      color: $darkerGrey;
+      background-color: $white;
+    }
+  }
+}

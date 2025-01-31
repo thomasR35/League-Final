@@ -1,6 +1,67 @@
 @import "../variables.scss";
 
-.match-card {
+.matches-section {
+  h2 {
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 24px;
+    color: $blue;
+  }
+}
+.matches-card {
   border: 1px solid $darkGrey;
-  margin: 1rem;
+  padding: 1.5rem;
+  background-color: $darkerGrey;
+  text-align: center;
+  max-width: 700px;
+  margin: 2rem auto;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.matches-header {
+  margin-bottom: 1rem;
+
+  h3 {
+    color: $blue;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  p {
+    color: $grey;
+    font-size: 1rem;
+  }
+}
+
+.matches-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+
+  img {
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: contain;
+  }
+}
+
+.matches-button {
+  display: inline-block;
+  background-color: $darkerGrey;
+  color: $blue;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid $blue;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: $blue;
+    color: $darkerGrey;
+  }
 }

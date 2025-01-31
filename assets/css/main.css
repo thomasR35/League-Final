@@ -1,50 +1,3 @@
-body {
-  font-family: "Roboto", sans-serif;
-  background-color: #0b132b;
-  margin: 0;
-  padding: 0;
-  height: auto;
-}
-
-header {
-  background-color: #0b132b;
-  padding: 10px;
-  color: #ffffff;
-  text-align: center;
-}
-
-nav {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  align-items: center;
-  margin-top: 10px;
-}
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 18px;
-  text-align: center;
-  text-transform: uppercase;
-}
-nav a:nth-child(1) {
-  grid-column: 2;
-}
-nav a:nth-child(2) {
-  grid-column: 3;
-}
-nav a:nth-child(3) {
-  grid-column: 4;
-}
-nav a:hover {
-  text-decoration: underline;
-}
-
-h1 {
-  text-align: center;
-  color: #ffffff;
-  font-weight: 700;
-}
-
 h2 {
   text-align: center;
   font-family: "Ubuntu", sans-serif;
@@ -53,6 +6,7 @@ h2 {
   text-transform: uppercase;
   text-decoration: underline;
   text-underline-offset: 0.5rem;
+  color: #45a0ec;
 }
 .team-section h2 {
   color: #d4b52f;
@@ -300,9 +254,6 @@ h2 {
   .team-logo img {
     max-width: 80px;
   }
-  .vs-text {
-    font-size: 16px;
-  }
 }
 @media (max-width: 768px) {
   .team-content {
@@ -317,9 +268,417 @@ h2 {
     width: 80px;
   }
 }
-.match-card {
+.matches-section h2 {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 24px;
+  color: #45a0ec;
+}
+
+.matches-card {
   border: 1px solid #1c2541;
-  margin: 1rem;
+  padding: 1.5rem;
+  background-color: #0b132b;
+  text-align: center;
+  max-width: 700px;
+  margin: 2rem auto;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.matches-header {
+  margin-bottom: 1rem;
+}
+.matches-header h3 {
+  color: #45a0ec;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.matches-header p {
+  color: #83a1bb;
+  font-size: 1rem;
+}
+
+.matches-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+.matches-logos img {
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.matches-button {
+  display: inline-block;
+  background-color: #0b132b;
+  color: #45a0ec;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #45a0ec;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+}
+.matches-button:hover {
+  background-color: #45a0ec;
+  color: #0b132b;
+}
+
+.teams-section {
+  text-align: center;
+  padding: 20px;
+}
+.teams-section h2 {
+  color: #d4b52f;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.teams-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  gap: 4rem;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.team-card img.team-logo {
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 10px;
+}
+.team-card h3 {
+  color: #d4b52f;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.team-card p {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.team-card a {
+  text-decoration: none;
+}
+.team-card .discover-btn {
+  background-color: transparent;
+  color: #d4b52f;
+  border: 2px solid #d4b52f;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: auto;
+}
+.team-card .discover-btn:hover {
+  background-color: #d4b52f;
+  color: #1c2541;
+}
+
+@media (max-width: 768px) {
+  .teams-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .team-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+  img.team-logo {
+    max-width: 200px;
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #0b132b;
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+header {
+  background-color: #0b132b;
+  padding: 10px;
+  color: #ffffff;
+  text-align: center;
+}
+header h1 a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  margin-top: 10px;
+}
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.nav a:nth-child(1) {
+  grid-column: 2;
+}
+.nav a:nth-child(2) {
+  grid-column: 3;
+}
+.nav a:nth-child(3) {
+  grid-column: 4;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.players-section {
+  text-align: center;
+  padding: 20px;
+}
+.players-section h2 {
+  color: #d97ab5;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.players-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.players-card {
+  text-align: center;
+  width: 250px;
+  margin-bottom: 2rem;
+}
+.players-card img.player-portrait {
+  width: 250px;
+  height: auto;
+}
+.players-card h3 {
+  color: #d97ab5;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.players-card .players-team {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.players-card .players-team img.team-logo {
+  width: 30px;
+  height: auto;
+}
+.players-card .players-team p {
+  color: #d4b52f;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+.players-card .players-team button {
+  background-color: transparent;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #d97ab5;
+  border: 2px solid #d97ab5;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.players-card .players-team button:hover {
+  background-color: #d97ab5;
+  color: #0b132b;
+}
+.players-card .no-team {
+  color: #83a1bb;
+  font-size: 0.9rem;
+}
+
+.player-details-section {
+  text-align: center;
+  padding: 20px;
+}
+.player-details-section h2 {
+  color: #d97ab5;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.player-details-section .player-portrait {
+  width: 250px;
+  height: auto;
+  margin-bottom: 10px;
+}
+.player-details-section table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 1px solid #1c2541;
+}
+.player-details-section table th,
+.player-details-section table td {
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+}
+.player-details-section table td:first-child {
+  color: #d4b52f;
+  font-weight: bold;
+}
+.player-details-section table td:last-child {
+  font-weight: bold;
+}
+.player-details-section table td:last-child:contains("Oui") {
+  color: green;
+}
+.player-details-section table td:last-child:contains("Non") {
+  color: red;
+}
+.player-details-section table th {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.player-details-section .performances-title {
+  color: #45a0ec;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.player-details-section .teammates-title {
+  color: #d4b52f;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.player-details-section .teammates-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.player-details-section .teammates-container .teammate-card {
+  text-align: center;
+}
+.player-details-section .teammates-container .teammate-card img {
+  width: 200px;
+}
+.player-details-section .teammates-container .teammate-card p {
+  color: #d97ab5;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.player-details-section .teammates-container .teammate-card a {
+  text-decoration: none;
+}
+.player-details-section .mate-btn {
+  background-color: transparent;
+  border: white 1px solid;
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+.player-details-section .mate-btn:hover {
+  color: #0b132b;
+  background-color: #ffffff;
+}
+
+.team-details-section {
+  text-align: center;
+  padding: 20px;
+}
+.team-details-section .team-title {
+  color: #d97ab5;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.playerz-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.playerz-card {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.playerz-card a {
+  text-decoration: none;
+}
+
+.playerz-portrait {
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.playerz-name {
+  color: #d97ab5;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.playerz-btn {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: auto;
+  display: inline-block;
+}
+
+.playerz-btn:hover {
+  background: #ffffff;
+  color: #0b132b;
 }
 
 /*# sourceMappingURL=main.css.map */

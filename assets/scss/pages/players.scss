@@ -1,0 +1,79 @@
+@import "../variables.scss";
+
+.players-section {
+  text-align: center;
+  padding: 20px;
+
+  h2 {
+    color: $pink;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
+}
+
+.players-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.players-card {
+  text-align: center;
+  width: 250px;
+  margin-bottom: 2rem;
+
+  img.player-portrait {
+    width: 250px;
+    height: auto;
+  }
+
+  h3 {
+    color: $pink;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  .players-team {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    img.team-logo {
+      width: 30px;
+      height: auto;
+    }
+
+    p {
+      color: $yellow;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+    button {
+      background-color: transparent;
+      text-transform: uppercase;
+      border-radius: 5px;
+      color: $pink;
+      border: 2px solid $pink;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      &:hover {
+        background-color: $pink;
+        color: $darkerGrey;
+      }
+    }
+  }
+
+  .no-team {
+    color: $grey;
+    font-size: 0.9rem;
+  }
+}

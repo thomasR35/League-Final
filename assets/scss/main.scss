@@ -1,5 +1,9 @@
-@import "pages/layout";
 @import "pages/home";
 @import "pages/matches";
+@import "pages/teams";
+@import "pages/layout";
+@import "pages/players";
+@import "pages/player-details.scss";
+@import "pages/team-details.scss";
 @import "variables";
 @import "mixins";

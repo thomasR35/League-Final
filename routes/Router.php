@@ -4,7 +4,9 @@ namespace App\Routes;
 
 use App\Controllers\HomeController;
 use App\Managers\PlayerManager;
+use App\Controllers\PlayerController;
 use App\Managers\TeamManager;
+use App\Controllers\TeamController;
 use App\Managers\GameManager;
 use App\Controllers\MatchController;
 use App\Config\Database;
@@ -38,6 +40,22 @@ class Router
                 break;
             case 'matches':
                 $this->matchController->index();
+                break;
+            case 'teams':
+                $controller = new TeamController($this->teamManager);
+                $controller->index();
+                break;
+            case 'players':
+                $controller = new PlayerController($this->playerManager);
+                $controller->index();
+                break;
+            case 'player-details':
+                $controller = new PlayerController($this->playerManager);
+                $controller->show($_GET['id']);
+                break;
+            case 'team-details':
+                $controller = new TeamController($this->teamManager, $this->playerManager);
+                $controller->show($_GET['id']);
                 break;
         }
     }

@@ -1,0 +1,47 @@
+{% extends "layout.twig" %}
+
+{% block title %}{{ player.nickname }} - The League{% endblock %}
+
+{% block content %}
+    <section class="player-details-section">
+        <h2>{{ player.nickname }}</h2>
+        <img src="{{ player.portrait_url }}" alt="{{ player.portrait_alt }}" class="player-portrait">
+
+        <h3 class="performances-title">Ses performances</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Adversaire</th>
+                    <th>Points</th>
+                    <th>Assists</th>
+                    <th>Victoire</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for perf in performances %}
+                    <tr>
+                        <td>{{ perf.opponent }}</td>
+                        <td>{{ perf.points }}</td>
+                        <td>{{ perf.assists }}</td>
+                        <td class="victory {% if perf.victory == 'Oui' %}win{% else %}loss{% endif %}">
+                        {{ perf.victory }}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h3 class="teammates-title">Sa team</h3>
+        <div class="teammates-container">
+            {% for mate in teammates %}
+                <div class="teammate-card">
+                    <img src="{{ mate.portrait_url }}" alt="{{ mate.portrait_alt }}">
+                    <p>{{ mate.nickname }}</p>
+                    <a href="index.php?page=player-details&id={{ mate.id }}" class="player-card">
+                    <button class="mate-btn">Découvrez {{ mate.nickname}}</button>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+    </section>
+{% endblock %}

@@ -1,6 +1,5 @@
 @import "../variables.scss"; // Import des variables
 
-// 📌 Style général
 body {
   font-family: $font-primary;
   background-color: $darkerGrey;
@@ -9,16 +8,20 @@ body {
   height: auto;
 }
 
-// 📌 Header
 header {
   background-color: $darkerGrey;
   padding: 10px;
   color: $white;
   text-align: center;
+  h1 {
+    a {
+      text-decoration: none;
+      color: $white;
+    }
+  }
 }
 
-// 📌 Navigation
-nav {
+.nav {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   align-items: center;
@@ -47,7 +50,6 @@ nav {
   }
 }
 
-// 📌 Titres
 h1 {
   text-align: center;
   color: $white;
